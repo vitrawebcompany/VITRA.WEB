@@ -1,0 +1,10 @@
+# VITRAWEB — robots.txt
+
+User-agent: *
+Allow: /
+
+# Carpeta interna que no debe indexarse
+Disallow: /docs/
+
+# Sitemap
+Sitemap: https://vitraweb.co/sitemap.xml

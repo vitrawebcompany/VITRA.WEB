@@ -1,0 +1,475 @@
+/* ==========================================================================
+   VITRAWEB — legal.css
+   Páginas legales: mismo sistema cálido del sitio.
+   ========================================================================== */
+
+.legal-page {
+  background-color: var(--paper);
+  background-image: radial-gradient(circle, var(--dot) 1.15px, transparent 1.3px);
+  background-size: var(--dot-size) var(--dot-size);
+}
+
+/* Header: misma píldora oscura que la portada. Sin este fondo el logo claro
+   (logo-vitra-claro.webp) queda casi invisible sobre el papel crema. */
+.legal-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: var(--header-h);
+  padding-inline: clamp(0.9rem, 2vw, 1.5rem);
+  border: 1.5px solid rgba(245, 246, 238, 0.16);
+  border-radius: var(--radius-pill);
+  background: rgba(39, 44, 51, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-md);
+}
+
+.legal-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.legal-header__inner .brand {
+  flex-shrink: 0;
+}
+
+/* CTA lima sobre la píldora oscura, igual que .site-header .header__cta */
+.legal-header__actions .btn {
+  background: var(--lime);
+  border-color: var(--lime);
+  color: var(--ink);
+}
+
+.legal-header__actions .btn:hover {
+  background: #c9ec00;
+  border-color: #c9ec00;
+  color: var(--ink);
+}
+
+.legal-nav {
+  display: none;
+  align-items: center;
+  gap: 1.35rem;
+}
+
+.legal-nav a {
+  padding: 0.4rem 0.65rem;
+  border-radius: var(--radius-pill);
+  color: rgba(245, 246, 238, 0.82);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.25s var(--ease-out), color 0.25s var(--ease-out);
+}
+
+/* Igual que .primary-nav: el activo es una píldora lima, no un subrayado. */
+.legal-nav a:hover,
+.legal-nav a[aria-current="page"] {
+  background: var(--lime);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+/* Documento ---------------------------------------------------------------- */
+.legal {
+  padding-block: clamp(2.25rem, 5vw, 4rem) clamp(3.5rem, 7vw, 6rem);
+}
+
+.legal__shell {
+  display: grid;
+  gap: clamp(1.75rem, 5vw, 4rem);
+}
+
+.legal__shell > * {
+  min-width: 0;
+}
+
+.legal__breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 1.25rem;
+  color: var(--ink-64);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.legal__breadcrumb a {
+  color: var(--ink-80);
+  transition: color 0.25s var(--ease-out);
+}
+
+.legal__breadcrumb a:hover {
+  color: var(--ink);
+}
+
+.legal__breadcrumb span[aria-hidden="true"] {
+  color: var(--ink-28);
+}
+
+.legal__header {
+  margin-top: 1.25rem;
+  padding-bottom: clamp(1.5rem, 3vw, 2.25rem);
+  border-bottom: 1.5px solid var(--ink-16);
+}
+
+.legal__title {
+  max-width: 24ch;
+  font-size: clamp(2rem, 5.5vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.legal__title em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  padding-inline: 0.04em;
+  border-bottom: 3px solid var(--lime);
+}
+
+.legal__lead {
+  margin-top: 1rem;
+  color: var(--ink-80);
+  font-size: clamp(0.92rem, 1.05vw, 1rem);
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.legal__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 1.1rem;
+  margin-top: 1.25rem;
+  color: var(--ink-64);
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.legal__meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.legal__meta span::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  background: var(--lime);
+  border: 1.5px solid var(--ink);
+}
+
+/* Índice ------------------------------------------------------------------- */
+.legal__toc {
+  align-self: start;
+  padding: 1.1rem 1.25rem;
+  border: 1.5px solid rgba(245, 246, 238, 0.16);
+  border-radius: var(--radius-lg);
+  background-color: var(--ink);
+  background-image: radial-gradient(circle, rgba(245, 246, 238, 0.22) 1.1px, transparent 1.3px);
+  background-size: 16px 16px;
+  box-shadow: var(--shadow-md);
+}
+
+.legal__toc-title {
+  margin-bottom: 0.75rem;
+  color: var(--paper);
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.legal__toc ol {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.legal__toc li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+}
+
+/* El <ol> en grid no muestra viñetas nativas: punto verde delante de cada item. */
+.legal__toc li::before {
+  content: "";
+  flex: 0 0 6px;
+  width: 6px;
+  height: 6px;
+  margin-top: 0.5em;
+  border-radius: 50%;
+  background: var(--lime);
+}
+
+.legal__toc a {
+  display: block;
+  flex: 1;
+  min-width: 0;
+  padding: 0.3rem 0.45rem;
+  border-radius: var(--radius-md);
+  color: rgba(245, 246, 238, 0.86);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.legal__toc a:hover,
+.legal__toc a:focus-visible {
+  background: var(--lime);
+  color: var(--ink);
+}
+
+/* Cuerpo del documento ------------------------------------------------------ */
+.legal__body h2 {
+  margin-top: 2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1.5px solid var(--ink-16);
+  font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.legal__body h2::before {
+  content: attr(data-num);
+  display: inline-block;
+  margin-right: 0.55rem;
+  padding: 0.1em 0.45em;
+  border-radius: 6px;
+  background: var(--lime);
+  border: 1.5px solid var(--ink);
+  color: var(--ink);
+  font-size: 0.62em;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  vertical-align: 0.15em;
+}
+
+.legal__body section:first-child h2 {
+  margin-top: 0;
+}
+
+/* El documento se justifica y ocupa todo el ancho de su columna. */
+.legal__body p {
+  margin-top: 0.85rem;
+  color: var(--ink-80);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.legal__body strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.legal__body a {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--lime-deep);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.legal__body ul {
+  display: grid;
+  gap: 0.45rem;
+  margin-top: 0.85rem;
+}
+
+.legal__body li {
+  position: relative;
+  padding-left: 1.2rem;
+  color: var(--ink-80);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.legal__body li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--ink-48);
+}
+
+.legal__body dl {
+  display: grid;
+  grid-template-columns: minmax(0, 12rem) minmax(0, 1fr);
+  gap: 0.35rem 1.5rem;
+  margin-top: 1rem;
+}
+
+.legal__body a {
+  overflow-wrap: anywhere;
+}
+
+.legal__body code {
+  overflow-wrap: anywhere;
+}
+
+.legal__table-wrap {
+  max-width: 100%;
+  margin-top: 0.85rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.legal__table {
+  width: 100%;
+  min-width: 34rem;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.legal__table th,
+.legal__table td {
+  border: 1px solid var(--ink-16);
+  padding: 0.55rem 0.7rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.legal__table th {
+  background: var(--ink-08);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.legal__body dt {
+  color: var(--ink-64);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding-top: 0.15rem;
+}
+
+.legal__body dd {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.legal__note {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border-left: 3px solid var(--lime-deep);
+  border-radius: var(--radius-md);
+  background: var(--paper-2);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.legal__note strong {
+  color: var(--ink);
+}
+
+.legal__footer {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1.5px solid var(--ink-16);
+  display: grid;
+  gap: 0.75rem;
+}
+
+.legal__footer p {
+  color: var(--ink-64);
+  font-size: 0.8rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.legal__footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.legal__footer-links .btn {
+  min-height: 2.25rem;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.76rem;
+}
+
+/* Estos enlaces están dentro de .legal__body, cuyo `a` es oscuro: sin este
+   ajuste el texto queda carbón sobre el fondo carbón del botón. */
+.legal__footer-links .btn,
+.legal__footer-links .btn:hover,
+.legal__footer-links .btn:focus-visible {
+  color: var(--paper);
+  text-decoration: none;
+}
+
+/* Entre 768 y 1023 px el menú completo cabe, pero hay que compactarlo para
+   que no empuje el logo (igual que el header de la portada en tablet). */
+@media (min-width: 48em) and (max-width: 63.99em) {
+  .legal-header__inner {
+    gap: 0.5rem;
+  }
+
+  .legal-nav {
+    gap: 0.2rem;
+  }
+
+  .legal-nav a {
+    padding: 0.35rem 0.45rem;
+    font-size: 0.72rem;
+  }
+
+  .legal-header__actions .btn {
+    padding-inline: 0.7rem;
+    font-size: 0.78rem;
+  }
+}
+
+@media (min-width: 48em) {
+  .legal-nav {
+    display: flex;
+  }
+
+  .legal__shell {
+    grid-template-columns: minmax(0, 0.32fr) minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .legal__toc {
+    position: sticky;
+    top: calc(var(--header-h) + 1rem);
+  }
+}
+
+@media (min-width: 64em) {
+  .legal__body dl {
+    grid-template-columns: minmax(0, 16rem) minmax(0, 1fr);
+  }
+}
